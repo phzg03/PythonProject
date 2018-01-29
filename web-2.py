@@ -1,4 +1,5 @@
 from socket import *
+from time import ctime
 
 HOST = '127.0.0.1'
 PORT = 21567
@@ -16,5 +17,5 @@ while True:
     data = tcpCliSock.recv(BUFSIZ)
     if not data:
         break
-    print(data.decode('utf-8'))
+    print(ctime() + ":" + data.decode('utf-8'))
 tcpCliSock.close()
