@@ -18,7 +18,7 @@ while True:
         data = tcpCliSock.recv(BUFSIZ)
         if not data:
             break
-        redata = ctime() + data.decode('utf-8')
+        redata = ctime() + " : " +data.decode('utf-8')
         tcpCliSock.send(redata.encode('utf-8'))
     tcpCliSock.close()
 
