@@ -2,10 +2,12 @@ import ftplib
 import os
 import socket
 
-HOST = '127.0.0.1'
-DIRN = 'file'
-FILE = 'ftp.txt'
-
+# HOST = '127.0.0.1'
+# DIRN = 'file'
+# FILE = 'ftp.txt'
+HOST = 'ftp1.at.proftpd.org'
+DIRN = 'pub/mozilla/'
+FILE = 'README.MIRRORS'
 
 def ftp():
     f = ftplib.FTP(HOST)
@@ -14,13 +16,13 @@ def ftp():
         f.login()
     except ftplib.error_perm:
         print('Cannot login "%s"' % HOST)
-    try:
-        f.cwd(DIRN)
-    except ftplib.error_perm:
-        print('Cannot CD to "%s"' % DIRN)
-        f.quit()
-        return
-    print('change to "%s"' % DIRN)
+    # try:
+    #     f.cwd(DIRN)
+    # except ftplib.error_perm:
+    #     print('Cannot CD to "%s"' % DIRN)
+    #     f.quit()
+    #     return
+    # print('change to "%s"' % DIRN)
     f.pwd()
     try:
         loc = open(FILE, 'wb').write
