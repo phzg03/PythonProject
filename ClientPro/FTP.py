@@ -21,12 +21,12 @@ def ftp():
     # except ftplib.error_perm:
     #     print('Cannot CD to "%s"' % DIRN)
     #     f.quit()
-    #     return
+    #     returnR
     # print('change to "%s"' % DIRN)
     f.pwd()
     try:
         loc = open(FILE, 'wb').write
-        f.retrbinary('RETE %s' % FILE, loc)   # 报错，不能读取文件
+        f.retrbinary('RET %s' % FILE, loc)   # ...RETR 写成RETE了........好尴尬.........
     except ftplib.error_perm:
         print('error is : %s ' % ftplib.error_perm)
         print('cannot read file "%s"' % FILE)
