@@ -1,4 +1,6 @@
 from smtplib import SMTP
+# from poplib import POP3
+from imaplib import IMAP4
 from email.header import Header
 from email.mime.text import MIMEText
 from email.utils import parseaddr, formataddr
@@ -11,6 +13,7 @@ def _format_addr(s):
 
 
 SMTPSVR = 'smtp.126.com' #smtp 服务器
+IMAP4SVR = 'imap.126.com'
 who = 'one@one.com'
 info = {
     'From':who,
@@ -29,3 +32,7 @@ sendSvr.login('user','password') # 更换成自己的email 用户名和密码
 errs = sendSvr.sendmail(who, 'one@one.com', msg.as_string())
 sendSvr.quit()
 assert len(errs) == 0, errs
+
+recvSvr = IMAP4('imap.126.com', 143)
+recvSvr.login('user', 'password')
+
