@@ -26,7 +26,7 @@ def ftp():
     f.pwd()
     try:
         loc = open(FILE, 'wb').write
-        f.retrbinary('RET %s' % FILE, loc)   # ...RETR 写成RETE了........好尴尬.........
+        f.retrbinary('RETR %s' % FILE, loc)   # ...RETR 写成RETE了........好尴尬.........
     except ftplib.error_perm:
         print('error is : %s ' % ftplib.error_perm)
         print('cannot read file "%s"' % FILE)
