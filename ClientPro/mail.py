@@ -1,9 +1,9 @@
 from smtplib import SMTP
 # from poplib import POP3
 from imaplib import IMAP4
-from email.header import Header
-from email.mime.text import MIMEText
-from email.utils import parseaddr, formataddr
+# from email.header import Header
+# from email.mime.text import MIMEText
+# from email.utils import parseaddr, formataddr
 
 
 def _format_addr(s):
