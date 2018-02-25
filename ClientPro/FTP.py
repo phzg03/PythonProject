@@ -9,6 +9,7 @@ HOST = 'ftp1.at.proftpd.org'
 DIRN = 'pub/mozilla/'
 FILE = 'README.MIRRORS'
 
+
 def ftp():
     f = ftplib.FTP(HOST)
     print('Connected to HOST : "%s"' % HOST)
